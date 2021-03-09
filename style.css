@@ -1,0 +1,50 @@
+body {
+    background-color: #181A1B;
+}
+
+h2 {
+    color:#BB86FC;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+p {
+    color:azure;
+}
+
+.card {
+    background-color: #6f7173; 
+    
+}
+
+/* .card-body {
+    background-color: #181A1B;;
+} */
+
+.folder {
+    /* border-style: solid; */
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    /* border-radius: 15px; */
+    background-color: #1C1E1F;
+}
+
+/* .row {
+    border-style: solid;
+    border-color:blue;
+}
+
+.col {
+    border-style: solid;
+    border-color:brown;
+} */
+
+
+
+.videoCol {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+
