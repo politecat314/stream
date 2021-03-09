@@ -1,26 +1,12 @@
 <?php
 include 'stream.php';
+include 'search.php'; // contains series names and path to folders inside dirList
+include 'htmlGenerators.php';
 
 // $filePath = 'C:\Users\user\Downloads\Parks.And.Recreation.S02.COMPLETE.WEB-DL.x264-LeRalouf\Parks.And.Recreation.S02E22.Telethon.WEB-DL.x264-LeRalouf.mp4';
 // $stream = new VideoStream($filePath);
 // $stream->start();
 
-function printNicely($array)
-{
-    foreach ($array as $key => $value) {
-        // echo $key . "=>" . $value . "</br>";
-    }
-}
-
-
-
-
-
-$dir = 'C:\Users\user\Downloads\Parks.And.Recreation.S02.COMPLETE.WEB-DL.x264-LeRalouf';
-
-
-
-printNicely(scandir($dir));
 
 
 
@@ -33,7 +19,7 @@ printNicely(scandir($dir));
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    
+
 
 
     <!-- Bootstrap CSS -->
@@ -42,7 +28,7 @@ printNicely(scandir($dir));
     <!-- font awesome css -->
     <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"> -->
 
-    
+
 
     <!-- <link rel="icon" type="image/svg" href="/components/logo.svg"/> -->
     <title>Stream</title>
@@ -74,153 +60,98 @@ printNicely(scandir($dir));
         </div>
     </nav>
 
-    <div class="container folder">
-        <div class="row">
-            <div class="col d-flex justify-content-center">
-                <h2>Parks and Recreation S02</h2>
-            </div>
-        
-        </div>
-        
-        <div class="row">
-            <div class="col col-lg-3 col-sm-12 d-flex justify-content-center videoCol">
-                <div class="card" style="width: 18rem;">
-                    <a href="watch.php?path=path_to_video">
-                        <img src="https://helpx.adobe.com/content/dam/help/en/stock/how-to/visual-reverse-image-search/jcr_content/main-pars/image/visual-reverse-image-search-v2_intro.jpg" class="card-img-top" alt="No preview available">
-                    </a>
-                    <div class="card-body">
-                        <p class="card-text">Parks.And.Recreation.S02E16.Galentines.Day.WEB-DL.x264-LeRalouf.mp4</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col col-lg-3 col-sm-12 d-flex justify-content-center videoCol">
-                <div class="card" style="width: 18rem;">
-                    <a href="watch.php?path=path_to_video">
-                        <img src="https://helpx.adobe.com/content/dam/help/en/stock/how-to/visual-reverse-image-search/jcr_content/main-pars/image/visual-reverse-image-search-v2_intro.jpg" class="card-img-top" alt="No preview available">
-                    </a>
-                    <div class="card-body">
-                        <p class="card-text">Parks.And.Recreation.S02E16.Galentines.Day.WEB-DL.x264-LeRalouf.mp4</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col col-lg-3 col-sm-12 d-flex justify-content-center videoCol">
-                <div class="card" style="width: 18rem;">
-                    <a href="watch.php?path=path_to_video">
-                        <img src="https://helpx.adobe.com/content/dam/help/en/stock/how-to/visual-reverse-image-search/jcr_content/main-pars/image/visual-reverse-image-search-v2_intro.jpg" class="card-img-top" alt="No preview available">
-                    </a>
-                    <div class="card-body">
-                        <p class="card-text">Parks.And.Recreation.S02E16.Galentines.Day.WEB-DL.x264-LeRalouf.mp4</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col col-lg-3 col-sm-12 d-flex justify-content-center videoCol">
-                <div class="card" style="width: 18rem;">
-                    <a href="watch.php?path=path_to_video">
-                        <img src="https://helpx.adobe.com/content/dam/help/en/stock/how-to/visual-reverse-image-search/jcr_content/main-pars/image/visual-reverse-image-search-v2_intro.jpg" class="card-img-top" alt="No preview available">
-                    </a>
-                    <div class="card-body">
-                        <p class="card-text">Parks.And.Recreation.S02E16.Galentines.Day.WEB-DL.x264-LeRalouf.mp4</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col col-lg-3 col-sm-12 d-flex justify-content-center videoCol">
-                <div class="card" style="width: 18rem;">
-                    <a href="watch.php?path=path_to_video">
-                        <img src="https://helpx.adobe.com/content/dam/help/en/stock/how-to/visual-reverse-image-search/jcr_content/main-pars/image/visual-reverse-image-search-v2_intro.jpg" class="card-img-top" alt="No preview available">
-                    </a>
-                    <div class="card-body">
-                        <p class="card-text">Parks.And.Recreation.S02E16.Galentines.Day.WEB-DL.x264-LeRalouf.mp4</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col col-lg-3 col-sm-12 d-flex justify-content-center videoCol">
-                <div class="card" style="width: 18rem;">
-                    <a href="watch.php?path=path_to_video">
-                        <img src="https://helpx.adobe.com/content/dam/help/en/stock/how-to/visual-reverse-image-search/jcr_content/main-pars/image/visual-reverse-image-search-v2_intro.jpg" class="card-img-top" alt="No preview available">
-                    </a>
-                    <div class="card-body">
-                        <p class="card-text">Parks.And.Recreation.S02E16.Galentines.Day.WEB-DL.x264-LeRalouf.mp4</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    <?php
+    // placeholder image for now
+    $img = "https://helpx.adobe.com/content/dam/help/en/stock/how-to/visual-reverse-image-search/jcr_content/main-pars/image/visual-reverse-image-search-v2_intro.jpg";
 
-    <div class="container folder">
-        <div class="row">
-            <div class="col d-flex justify-content-center">
-                <h2>Seinfeld</h2>
-            </div>
-        
-        </div>
-        
-        <div class="row">
-            <div class="col col-lg-3 col-sm-12 d-flex justify-content-center videoCol">
-                <div class="card" style="width: 18rem;">
-                    <a href="watch.php?path=path_to_video">
-                        <img src="https://helpx.adobe.com/content/dam/help/en/stock/how-to/visual-reverse-image-search/jcr_content/main-pars/image/visual-reverse-image-search-v2_intro.jpg" class="card-img-top" alt="No preview available">
-                    </a>
-                    <div class="card-body">
-                        <p class="card-text">Parks.And.Recreation.S02E16.Galentines.Day.WEB-DL.x264-LeRalouf.mp4</p>
-                    </div>
+
+    foreach ($dirList as $title => $folder_path) {
+        $video_files = array_values(array_filter(scandir($folder_path), "validFormat")); // return all mp4 and mkv files in $folder_path
+        echo
+        '<div class="container folder">
+            <div class="row">
+                <div class="col d-flex justify-content-center">
+                    <h2>' . $title . '</h2>
                 </div>
             </div>
-            <div class="col col-lg-3 col-sm-12 d-flex justify-content-center videoCol">
-                <div class="card" style="width: 18rem;">
-                    <a href="watch.php?path=path_to_video">
-                        <img src="https://helpx.adobe.com/content/dam/help/en/stock/how-to/visual-reverse-image-search/jcr_content/main-pars/image/visual-reverse-image-search-v2_intro.jpg" class="card-img-top" alt="No preview available">
-                    </a>
-                    <div class="card-body">
-                        <p class="card-text">Parks.And.Recreation.S02E16.Galentines.Day.WEB-DL.x264-LeRalouf.mp4</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col col-lg-3 col-sm-12 d-flex justify-content-center videoCol">
-                <div class="card" style="width: 18rem;">
-                    <a href="watch.php?path=path_to_video">
-                        <img src="https://helpx.adobe.com/content/dam/help/en/stock/how-to/visual-reverse-image-search/jcr_content/main-pars/image/visual-reverse-image-search-v2_intro.jpg" class="card-img-top" alt="No preview available">
-                    </a>
-                    <div class="card-body">
-                        <p class="card-text">Parks.And.Recreation.S02E16.Galentines.Day.WEB-DL.x264-LeRalouf.mp4</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col col-lg-3 col-sm-12 d-flex justify-content-center videoCol">
-                <div class="card" style="width: 18rem;">
-                    <a href="watch.php?path=path_to_video">
-                        <img src="https://helpx.adobe.com/content/dam/help/en/stock/how-to/visual-reverse-image-search/jcr_content/main-pars/image/visual-reverse-image-search-v2_intro.jpg" class="card-img-top" alt="No preview available">
-                    </a>
-                    <div class="card-body">
-                        <p class="card-text">Parks.And.Recreation.S02E16.Galentines.Day.WEB-DL.x264-LeRalouf.mp4</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col col-lg-3 col-sm-12 d-flex justify-content-center videoCol">
-                <div class="card" style="width: 18rem;">
-                    <a href="watch.php?path=path_to_video">
-                        <img src="https://helpx.adobe.com/content/dam/help/en/stock/how-to/visual-reverse-image-search/jcr_content/main-pars/image/visual-reverse-image-search-v2_intro.jpg" class="card-img-top" alt="No preview available">
-                    </a>
-                    <div class="card-body">
-                        <p class="card-text">Parks.And.Recreation.S02E16.Galentines.Day.WEB-DL.x264-LeRalouf.mp4</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col col-lg-3 col-sm-12 d-flex justify-content-center videoCol">
-                <div class="card" style="width: 18rem;">
-                    <a href="watch.php?path=path_to_video">
-                        <img src="https://helpx.adobe.com/content/dam/help/en/stock/how-to/visual-reverse-image-search/jcr_content/main-pars/image/visual-reverse-image-search-v2_intro.jpg" class="card-img-top" alt="No preview available">
-                    </a>
-                    <div class="card-body">
-                        <p class="card-text">Parks.And.Recreation.S02E16.Galentines.Day.WEB-DL.x264-LeRalouf.mp4</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+            
+            <div class="row">';
+        foreach ($video_files as $key => $video_name) { // video_name contains format like: example.mp4
+            videoColGenerate($folder_path, $video_name, $img);
+        }
+
+        echo "</div>";
+        echo "</div>";
+
+        //     echo 
+        //     '<div class="row">
+        //         <div class="col col-lg-3 col-sm-12 d-flex justify-content-center videoCol">
+        //             <div class="card" style="width: 18rem;">
+        //                 <a href="watch.php?path=path_to_video">
+        //                     <img src="https://helpx.adobe.com/content/dam/help/en/stock/how-to/visual-reverse-image-search/jcr_content/main-pars/image/visual-reverse-image-search-v2_intro.jpg" class="card-img-top" alt="No preview available">
+        //                 </a>
+        //                 <div class="card-body">
+        //                     <p class="card-text">Parks.And.Recreation.S02E16.Galentines.Day.WEB-DL.x264-LeRalouf.mp4</p>
+        //                 </div>
+        //             </div>
+        //         </div>
+        //         <div class="col col-lg-3 col-sm-12 d-flex justify-content-center videoCol">
+        //             <div class="card" style="width: 18rem;">
+        //                 <a href="watch.php?path=path_to_video">
+        //                     <img src="https://helpx.adobe.com/content/dam/help/en/stock/how-to/visual-reverse-image-search/jcr_content/main-pars/image/visual-reverse-image-search-v2_intro.jpg" class="card-img-top" alt="No preview available">
+        //                 </a>
+        //                 <div class="card-body">
+        //                     <p class="card-text">Parks.And.Recreation.S02E16.Galentines.Day.WEB-DL.x264-LeRalouf.mp4</p>
+        //                 </div>
+        //             </div>
+        //         </div>
+        //         <div class="col col-lg-3 col-sm-12 d-flex justify-content-center videoCol">
+        //             <div class="card" style="width: 18rem;">
+        //                 <a href="watch.php?path=path_to_video">
+        //                     <img src="https://helpx.adobe.com/content/dam/help/en/stock/how-to/visual-reverse-image-search/jcr_content/main-pars/image/visual-reverse-image-search-v2_intro.jpg" class="card-img-top" alt="No preview available">
+        //                 </a>
+        //                 <div class="card-body">
+        //                     <p class="card-text">Parks.And.Recreation.S02E16.Galentines.Day.WEB-DL.x264-LeRalouf.mp4</p>
+        //                 </div>
+        //             </div>
+        //         </div>
+        //         <div class="col col-lg-3 col-sm-12 d-flex justify-content-center videoCol">
+        //             <div class="card" style="width: 18rem;">
+        //                 <a href="watch.php?path=path_to_video">
+        //                     <img src="https://helpx.adobe.com/content/dam/help/en/stock/how-to/visual-reverse-image-search/jcr_content/main-pars/image/visual-reverse-image-search-v2_intro.jpg" class="card-img-top" alt="No preview available">
+        //                 </a>
+        //                 <div class="card-body">
+        //                     <p class="card-text">Parks.And.Recreation.S02E16.Galentines.Day.WEB-DL.x264-LeRalouf.mp4</p>
+        //                 </div>
+        //             </div>
+        //         </div>
+        //     </div>
+        //     <div class="row">
+        //         <div class="col col-lg-3 col-sm-12 d-flex justify-content-center videoCol">
+        //             <div class="card" style="width: 18rem;">
+        //                 <a href="watch.php?path=path_to_video">
+        //                     <img src="https://helpx.adobe.com/content/dam/help/en/stock/how-to/visual-reverse-image-search/jcr_content/main-pars/image/visual-reverse-image-search-v2_intro.jpg" class="card-img-top" alt="No preview available">
+        //                 </a>
+        //                 <div class="card-body">
+        //                     <p class="card-text">Parks.And.Recreation.S02E16.Galentines.Day.WEB-DL.x264-LeRalouf.mp4</p>
+        //                 </div>
+        //             </div>
+        //         </div>
+        //         <div class="col col-lg-3 col-sm-12 d-flex justify-content-center videoCol">
+        //             <div class="card" style="width: 18rem;">
+        //                 <a href="watch.php?path=path_to_video">
+        //                     <img src="https://helpx.adobe.com/content/dam/help/en/stock/how-to/visual-reverse-image-search/jcr_content/main-pars/image/visual-reverse-image-search-v2_intro.jpg" class="card-img-top" alt="No preview available">
+        //                 </a>
+        //                 <div class="card-body">
+        //                     <p class="card-text">Parks.And.Recreation.S02E16.Galentines.Day.WEB-DL.x264-LeRalouf.mp4</p>
+        //                 </div>
+        //             </div>
+        //         </div>
+        //     </div>
+        // </div>';
+    }
+    ?>
+
 
 
 
