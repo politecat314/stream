@@ -32,7 +32,7 @@ include 'ffmpeg.php';
 
 
 
-    <!-- <link rel="icon" type="image/svg" href="/components/logo.svg"/> -->
+    <link rel="icon" href="iconfinder_play_alt_118620.ico"/>
     <title>Stream</title>
 </head>
 
