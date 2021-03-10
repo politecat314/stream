@@ -1,6 +1,5 @@
 <?php
 require 'vendor/autoload.php';
-include 'search.php';
 use Psr\Log\LoggerInterface;
 
 
@@ -14,7 +13,9 @@ use Psr\Log\LoggerInterface;
 // $image = "./thumbnails/thumb.jpg";
 // $frame = $video->frame(FFMpeg\Coordinate\TimeCode::fromSeconds(42));
 // $frame->save($image);
-
+function validFormat($filename) { // returns true if video format is valid
+    return (str_ends_with($filename,".mp4") or str_ends_with($filename,".mkv"));
+}
 
 
 function getFilename($file_name_with_extension) { // removes the extension
@@ -33,7 +34,7 @@ function genThumbnail($video_path, $video_name) { // full video path must be giv
     // echo "<br>";
     // echo $image;
     // echo "<br>";
-    echo "$video_name GENERATED <br>";
+    // echo "$video_name GENERATED <br>";
 
     $frame = $video->frame(FFMpeg\Coordinate\TimeCode::fromSeconds(42));
     $frame->save($image);
@@ -57,7 +58,7 @@ function genImage($directory_path) {
             
             genThumbnail("$directory_path\\$video_file", $video_file); // uncomment later
         } else {
-            echo "$video_file CACHED <br>";
+            // echo "$video_file CACHED <br>";
         }
     }
 }

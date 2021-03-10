@@ -8,9 +8,7 @@ $dirList = array(
             );
 
 
-function validFormat($filename) { // returns true if video format is valid
-    return (str_ends_with($filename,".mp4") or str_ends_with($filename,".mkv"));
-}
+
 
 
 
