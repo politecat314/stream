@@ -60,3 +60,14 @@ p {
     border-style: solid;
     border-color:brown;
 } */
+
+
+form label{
+    color: #fff;
+  }
+
+  input[type="text"], textarea {
+
+    background-color : #d1d1d1; 
+  
+  }
