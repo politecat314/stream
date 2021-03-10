@@ -56,7 +56,12 @@ function genImage($directory_path) {
         if (!in_array(getFilename($video_file).'.jpg', $thumbnails)) { // if not already cached
             // echo getFilename($video_file).'jpg <br>';
             
-            genThumbnail("$directory_path\\$video_file", $video_file); // uncomment later
+            try {
+                genThumbnail("$directory_path\\$video_file", $video_file); // uncomment later
+            } catch (Exception $e) {
+
+            }
+            
         } else {
             // echo "$video_file CACHED <br>";
         }
