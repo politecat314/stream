@@ -1,6 +1,5 @@
 <?php
 include 'stream.php';
-include 'search.php'; // contains series names and path to folders inside dirList
 include 'htmlGenerators.php';
 include 'db_connection.php';
 include 'ffmpeg.php';
@@ -56,8 +55,7 @@ include 'ffmpeg.php';
     </nav>
 
     <?php
-    // placeholder image for now
-    $img = "https://helpx.adobe.com/content/dam/help/en/stock/how-to/visual-reverse-image-search/jcr_content/main-pars/image/visual-reverse-image-search-v2_intro.jpg";
+    
 
 
     $conn = OpenCon();
@@ -85,8 +83,8 @@ include 'ffmpeg.php';
             
             <div class="row">';
         foreach ($video_files as $key => $video_name) { // video_name contains format like: example.mp4
-            genImage($folder_path);
-            videoColGenerate($folder_path, $video_name, './thumbnails/'.getfilename($video_name).'.jpg');
+            
+            videoColGenerate($folder_path, $video_name);
         }
 
         echo "</div>";
@@ -100,26 +98,6 @@ include 'ffmpeg.php';
                 
     CloseCon($conn);
 
-
-    // foreach ($dirList as $title => $folder_path) {
-    //     $video_files = array_values(array_filter(scandir($folder_path), "validFormat")); // return all mp4 and mkv files in $folder_path
-    //     echo
-    //     '<div class="container folder">
-    //         <div class="row">
-    //             <div class="col d-flex justify-content-center">
-    //                 <h2>' . $title . '</h2>
-    //             </div>
-    //         </div>
-            
-    //         <div class="row">';
-    //     foreach ($video_files as $key => $video_name) { // video_name contains format like: example.mp4
-    //         videoColGenerate($folder_path, $video_name, $img);
-    //     }
-
-    //     echo "</div>";
-    //     echo "</div>";
-
-    // }
     ?>
 
 
@@ -132,5 +110,7 @@ include 'ffmpeg.php';
 
 
 </body>
+
+<script src="script.js"></script>
 
 </html>

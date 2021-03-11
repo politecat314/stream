@@ -4,15 +4,11 @@ use Psr\Log\LoggerInterface;
 
 
 // $ffmpeg = FFMpeg\FFMpeg::create();
-
-
-
 // $video = $ffmpeg->open("C:\Users\user\Downloads\Parks.And.Recreation.S02.COMPLETE.WEB-DL.x264-LeRalouf\Parks.And.Recreation.S02E16.Galentines.Day.WEB-DL.x264-LeRalouf.mp4");
-
-
 // $image = "./thumbnails/thumb.jpg";
 // $frame = $video->frame(FFMpeg\Coordinate\TimeCode::fromSeconds(42));
 // $frame->save($image);
+
 function validFormat($filename) { // returns true if video format is valid
     return (str_ends_with($filename,".mp4") or str_ends_with($filename,".mkv"));
 }
@@ -30,20 +26,12 @@ function genThumbnail($video_path, $video_name) { // full video path must be giv
 
     $image = "./thumbnails/$video_name.jpg";
 
-    // echo $video_path;
-    // echo "<br>";
-    // echo $image;
-    // echo "<br>";
-    // echo "$video_name GENERATED <br>";
+
 
     $frame = $video->frame(FFMpeg\Coordinate\TimeCode::fromSeconds(42));
     $frame->save($image);
 }
 
-// $dirContents = scandir('./thumbnails');
-// print_r($dirContents);
-
-// echo (in_array('Screenshot (21).png',$dirContents));
 
 
 function genImage($directory_path) {
@@ -67,20 +55,3 @@ function genImage($directory_path) {
         }
     }
 }
-
-genImage("C:\Users\user\Downloads\Parks.And.Recreation.S02.COMPLETE.WEB-DL.x264-LeRalouf");
-
-// genThumbnail('C:\Users\user\Downloads\Parks.And.Recreation.S02.COMPLETE.WEB-DL.x264-LeRalouf\Parks.And.Recreation.S02E22.Telethon.WEB-DL.x264-LeRalouf.mp4','Parks.And.Recreation.S02E22.Telethon.WEB-DL.x264-LeRalouf');
-
-
-
-// $ffmpeg = FFMpeg\FFMpeg::create();
-
-
-
-// $video = $ffmpeg->open("C:\Users\user\Downloads\Parks.And.Recreation.S02.COMPLETE.WEB-DL.x264-LeRalouf\Parks.And.Recreation.S02E16.Galentines.Day.WEB-DL.x264-LeRalouf.mp4");
-
-
-// $image = "./thumbnails/Parks.And.Recreation.S02E22.Telethon.WEB-DL.x264-LeRalouf.jpg";
-// $frame = $video->frame(FFMpeg\Coordinate\TimeCode::fromSeconds(42));
-// $frame->save($image);
