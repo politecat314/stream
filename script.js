@@ -22,7 +22,7 @@ window.onload = () => {
                 video_name = video.parentNode.children[1].children[0].innerHTML;
 
                 if (watched.includes(video_name)) {
-                    video.parentNode.style.backgroundColor = "#1f1e52";
+                    video.parentNode.style.backgroundColor = "#0d0d24";
                 }
                 
             }
