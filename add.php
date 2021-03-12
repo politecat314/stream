@@ -55,11 +55,11 @@ if (!empty($encodedHtmlPost)) {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <!-- font awesome css -->
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
 
 
 
-    <!-- <link rel="icon" type="image/svg" href="/components/logo.svg"/> -->
+    <link rel="icon" href="iconfinder_play_alt_118620.ico" />
     <title>Stream: add</title>
 
 </head>
@@ -68,17 +68,17 @@ if (!empty($encodedHtmlPost)) {
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a class="navbar-brand" href="#">Stream</a>
+            <a class="navbar-brand" href="index.php">Stream</a>
             <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button> -->
             <div class="collapse navbar-collapse d-sm-none" id="navbarText">
                 <ul id="link_list" class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
-                        <a class="nav-link" aria-current="page" href="index.php">Home</a>
+                        <a class="nav-link" aria-current="page" href="index.php"><i class="fas fa-home"></i> Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="#">Add</a>
+                        <a class="nav-link active" href="#"><i class="fas fa-database"></i> Add</a>
                     </li>
             </div>
         </div>
