@@ -73,14 +73,15 @@ function loadImages(thumbnails, default_image) { // load the thumbnails for all 
 
     for (var i = 0; i < card.length; i++) {
         videoName = card[i].children[1].children[0].innerHTML;
-
+        
         image_src = "./thumbnails/"+default_image;
-
+        
         if (thumbnails.includes(videoName+'.jpg')) { // if thumbnail already generated
             image_src = "./thumbnails/"+videoName+'.jpg';
         }
-
+        
         // setting the image
-        card[i].children[0].innerHTML = `<img src=${image_src} class="card-img-top" alt="No preview available"></img>`;
+        card[i].children[0].innerHTML = `<img src="`+image_src+`" class="card-img-top" alt="No preview available"></img>`;
+        
     }
 }
