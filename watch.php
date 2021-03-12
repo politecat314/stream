@@ -19,18 +19,23 @@ if (isset($_GET['path'])) {
     }
 
     CloseCon($conn);
+
+
+    loadVideo();
 } else {
     echo "not inserted into database";
 }
 
 
-// if (str_ends_with(".mkv",$_GET['path'])) {
-//     echo   '<video>
-//                 <source src="'.$_GET['path'].'" type="video/mkv">
-//             </video>';
-// } else {
-//     $stream = new VideoStream($_GET['path']);
-//     $stream->start();
-// }
+function loadVideo() {
+if (str_ends_with(".mkv",$_GET['path'])) {
+    echo   '<video>
+                <source src="'.$_GET['path'].'" type="video/mkv">
+            </video>';
+} else {
+    $stream = new VideoStream($_GET['path']);
+    $stream->start();
+}
+}
 
 ?>
