@@ -5,25 +5,27 @@ window.onload = () => {
     updateWatched();
     
 
+    let cache = setInterval(()=>{
+        fetch('thumbnails.php', { // loading the cached ones
+            method: 'get',
+            // may be some code of fetching comes here
+        }).then(function (response) {
+            if (response.status >= 200 && response.status < 300) {
+                return response.text()
+            }
+            throw new Error(response.statusText)
+        })
+            .then(function (response) {
+    
+                thumbnails = JSON.parse(response);
+    
+                loadImages(thumbnails, "load.gif");
+            })
+    },100);
+
     
 
-    fetch('thumbnails.php', { // loading the cached ones
-        method: 'get',
-        // may be some code of fetching comes here
-    }).then(function (response) {
-        if (response.status >= 200 && response.status < 300) {
-            return response.text()
-        }
-        throw new Error(response.statusText)
-    })
-        .then(function (response) {
-
-            thumbnails = JSON.parse(response);
-
-            loadImages(thumbnails, "load.gif");
-        })
-
-
+        
 
     fetch('load.php', {
         method: 'get',
@@ -39,6 +41,8 @@ window.onload = () => {
             thumbnails = JSON.parse(response);
 
             loadImages(thumbnails, "unnamed.png");
+
+            clearInterval(cache);
         })
 };
 
