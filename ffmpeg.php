@@ -28,7 +28,7 @@ function genThumbnail($video_path, $video_name) { // full video path must be giv
 
 
 
-    $frame = $video->frame(FFMpeg\Coordinate\TimeCode::fromSeconds(42));
+    $frame = $video->frame(FFMpeg\Coordinate\TimeCode::fromSeconds(300));
     $frame->save($image);
 }
 

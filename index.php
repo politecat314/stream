@@ -43,10 +43,13 @@ include 'ffmpeg.php';
                     <li class="nav-item">
                         <a class="nav-link" href="add.php"><i class="fas fa-database"></i> Add</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ideas.php"><i class="fas fa-lightbulb"></i> Ideas</a>
+                    </li>
             </div>
         </div>
     </nav>
-
+    
     <?php
 
     // start of load folders in the database

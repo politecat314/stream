@@ -1,0 +1,51 @@
+body {
+    background-color: #181A1B;
+    
+}
+
+/* .container {
+    border-style: solid;
+    border-color: black;
+} */
+
+
+/* .row {
+    border-style: solid;
+    border-color: blue;
+}
+
+.col {
+    border-style: solid;
+    border-color: brown;
+}
+
+.col-6 {
+    border-style: solid;
+    border-color: brown;
+} */
+
+.containerN {   
+    /* border-style: solid; */
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    background-color: #1C1E1F;
+}
+
+h3 {
+    color:aquamarine;
+    /* padding-top: 0.5rem; */
+    padding-bottom: 0.5rem;
+    padding-left: 0.5rem;
+}
+
+form label{
+    color:aliceblue;
+}
+
+.close {
+    border:none; 
+    background-color: #212529; 
+    color: white;
+  }

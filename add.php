@@ -80,6 +80,9 @@ if (!empty($encodedHtmlPost)) {
                     <li class="nav-item">
                         <a class="nav-link active" href="#"><i class="fas fa-database"></i> Add</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ideas.php"><i class="fas fa-lightbulb"></i> Ideas</a>
+                    </li>
             </div>
         </div>
     </nav>

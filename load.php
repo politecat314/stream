@@ -26,5 +26,10 @@ if ($result->num_rows > 0) {
 CloseCon($conn);
 
 // print_r(array_values($directories));
+$downloads = scandir('./Downloads');
+for ($i=2; $i<count($downloads); $i++) {
+    // echo $downloads[$i] ."<br>";
+    genImage("./Downloads/".$downloads[$i]);
+}
 
 echo json_encode(scandir('./thumbnails'));
