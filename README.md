@@ -2,7 +2,7 @@
 Movie/series streaming php website
 
 DEMO:
-![alt text](https://drive.google.com/file/d/16aXzzSmBkhmHPqsZ5FFH9X0pBxcTuQ_x/preview)
+![alt text](https://drive.google.com/uc?export=download&id=16aXzzSmBkhmHPqsZ5FFH9X0pBxcTuQ_x)
 
 Installation steps:
 1. Make sure to have xampp or any other server installed
